@@ -1,0 +1,1 @@
+import {InfoPage} from '../_components/InfoPage'; export default function Page(){return <InfoPage page="mission"/>}
