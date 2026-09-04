@@ -1,0 +1,3 @@
+import { NextResponse } from 'next/server';import { prisma } from '@/lib/prisma';import { getCurrentUser } from '@/lib/auth';
+export async function POST(){const user=await getCurrentUser();if(!user)return NextResponse.json({error:'Authentication required.'},{status:401});return NextResponse.json({error:'Email delivery and signed verification tokens must be configured before verification can be completed.'},{status:501})}
+export async function GET(){const user=await getCurrentUser();if(!user)return NextResponse.json({user:null},{status:401});const updated=await prisma.user.findUnique({where:{id:user.id},select:{emailVerified:true}});return NextResponse.json({emailVerified:updated?.emailVerified??false})}
