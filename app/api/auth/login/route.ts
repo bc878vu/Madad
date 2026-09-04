@@ -1,0 +1,5 @@
+import { NextResponse } from 'next/server';
+import { prisma } from '@/lib/prisma';
+import { createSession, SESSION_COOKIE, sessionCookieOptions, verifyPassword } from '@/lib/auth';
+import { loginSchema } from '@/lib/validation';
+export async function POST(request:Request){try{const {email,password}=loginSchema.parse(await request.json());const user=await prisma.user.findUnique({where:{email:email.toLowerCase()}});if(!user||!verifyPassword(password,user.passwordHash))return NextResponse.json({error:'Invalid email or password.'},{status:401});if(user.isRestricted)return NextResponse.json({error:'This account is currently restricted.'},{status:403});const token=await createSession(user.id);const response=NextResponse.json({user:{id:user.id,username:user.username,email:user.email}});response.cookies.set(SESSION_COOKIE,token,sessionCookieOptions());return response}catch{return NextResponse.json({error:'Invalid login request.'},{status:400})}}
