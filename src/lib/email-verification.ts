@@ -1,0 +1,5 @@
+import { createHash,randomBytes } from 'crypto';import { prisma } from '@/lib/prisma';
+const TTL=1000*60*60*24;
+const hash=(v:string)=>createHash('sha256').update(v).digest('hex');
+export async function createEmailVerificationToken(userId:string){await prisma.emailVerificationToken.deleteMany({where:{userId}});const token=randomBytes(32).toString('hex');await prisma.emailVerificationToken.create({data:{userId,tokenHash:hash(token),expiresAt:new Date(Date.now()+TTL)}});return token}
+export async function consumeEmailVerificationToken(token:string){const row=await prisma.emailVerificationToken.findUnique({where:{tokenHash:hash(token)}});if(!row||row.expiresAt<=new Date()){if(row)await prisma.emailVerificationToken.delete({where:{id:row.id}});return null}await prisma.$transaction([prisma.user.update({where:{id:row.userId},data:{emailVerified:true}}),prisma.emailVerificationToken.delete({where:{id:row.id}})]);return row.userId}
