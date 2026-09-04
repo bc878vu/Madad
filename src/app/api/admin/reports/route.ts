@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server';import { prisma } from '@/lib/prisma';import { requireModerator } from '@/lib/admin';
+export async function GET(){if(!await requireModerator())return NextResponse.json({error:'Forbidden'},{status:403});const reports=await prisma.report.findMany({where:{status:{in:['OPEN','REVIEWING']}},include:{post:{include:{author:{select:{id:true,username:true,email:true}}}},orderBy:{createdAt:'desc'},take:100});return NextResponse.json({reports})}
