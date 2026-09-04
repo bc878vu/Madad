@@ -1,18 +1,6 @@
 import { NextResponse } from 'next/server';
-import { PrismaClient } from '@prisma/client';
+import { prisma } from '@/lib/prisma';
+import { getCurrentUser } from '@/lib/auth';
 import { postSchema } from '@/lib/validation';
-
-const prisma = new PrismaClient();
-
-export async function GET() {
-  const posts = await prisma.post.findMany({
-    where: { status: 'ACTIVE' },
-    include: { author: { select: { username: true, avatarUrl: true } }, _count: { select: { comments: true, helpOffers: true } } },
-    orderBy: { createdAt: 'desc' }, take: 30
-  });
-  return NextResponse.json({ posts });
-}
-
-export async function POST(request: Request) {
-  return NextResponse.json({ error: 'Authentication middleware is required before publishing posts.' }, { status: 501 });
-}
+export async function GET(){const posts=await prisma.post.findMany({where:{status:'ACTIVE'},include:{author:{select:{username:true}},_count:{select:{comments:true,helpOffers:true}}},orderBy:{createdAt:'desc'},take:30});return NextResponse.json({posts})}
+export async function POST(request:Request){try{const user=await getCurrentUser();if(!user)return NextResponse.json({error:'Authentication required.'},{status:401});if(user.isRestricted)return NextResponse.json({error:'Account is restricted.'},{status:403});const body=postSchema.parse(await request.json());const post=await prisma.post.create({data:{authorId:user.id,title:body.title,content:body.content,category:body.category,country:body.country||null,city:body.city||null},include:{author:{select:{username:true}}}});return NextResponse.json({post},{status:201})}catch{return NextResponse.json({error:'Invalid post data.'},{status:400})}}
