@@ -1,0 +1,648 @@
+You are working on my existing MADAD website repository.
+
+IMPORTANT:
+Do not rebuild the project from scratch.
+Do not remove existing functionality.
+First deeply inspect the entire repository, understand the current architecture, routes, components, API, authentication, database/Prisma setup, existing pages, responsive styles, and deployment configuration.
+
+The goal is to transform MADAD into a much more premium, modern, stylish, professional, and fully responsive global community help platform.
+
+MADAD is a platform where people can post real needs and connect with people who can provide practical help.
+
+==================================================
+PRIMARY GOAL
+==================================================
+
+Improve the complete website visually and structurally.
+
+The current website works but needs a major professional UI/UX upgrade.
+
+Make every page look polished and intentional.
+
+Fix:
+- spacing
+- alignment
+- typography
+- card layouts
+- buttons
+- forms
+- navigation
+- sidebars
+- headers
+- footers
+- mobile responsiveness
+- tablet responsiveness
+- desktop responsiveness
+- overflow issues
+- horizontal scrolling
+- broken links
+- non-clickable elements
+- inconsistent layouts
+- poor visual hierarchy
+
+Do not just make superficial CSS changes.
+Deeply review every existing page and component.
+
+==================================================
+DESIGN DIRECTION
+==================================================
+
+Create an original premium enterprise/community platform design.
+
+Use inspiration from modern enterprise websites in terms of:
+- strong visual hierarchy
+- large editorial typography
+- clean layouts
+- premium spacing
+- full-width sections
+- subtle gradients
+- elegant cards
+- trust-focused UI
+- professional CTA sections
+
+DO NOT copy another company's branding, text, or exact layout.
+
+MADAD must maintain its own original identity.
+
+Suggested design language:
+
+Typography:
+- elegant editorial serif headings
+- clean modern sans-serif body text
+- strong readable hierarchy
+
+Visual style:
+- premium
+- minimal
+- warm
+- trustworthy
+- modern
+- community-focused
+
+Colors:
+- dark forest/charcoal green
+- warm off-white backgrounds
+- subtle beige/cream tones
+- muted olive accents
+- warm orange/coral accent only where appropriate
+
+Use subtle:
+- borders
+- shadows
+- gradients
+- hover states
+- transitions
+- focus states
+
+Avoid excessive animations.
+
+==================================================
+HEADER / NAVBAR
+==================================================
+
+Create a premium responsive navigation system.
+
+Desktop navigation:
+
+MADAD Logo
+
+Explore
+How It Works
+Safety
+About
+Resources / FAQ
+Contact
+
+Right side:
+Sign In
+Primary CTA: Post a Need / Join MADAD
+
+Requirements:
+
+- sticky header
+- clean spacing
+- proper active states
+- hover states
+- all links must actually work
+- no dead buttons
+- no fake navigation
+- mobile responsive
+
+Mobile:
+
+Create a professional hamburger menu.
+
+When opened:
+- proper overlay or slide-down panel
+- all navigation links visible
+- easy touch targets
+- no overflow
+- close button
+- clicking every link must navigate correctly
+
+==================================================
+HOME PAGE
+==================================================
+
+Redesign the homepage completely while preserving existing functionality.
+
+Hero:
+
+Large premium hero section.
+
+Main message should communicate:
+
+No one should face a real need alone.
+
+Supporting text:
+MADAD connects people with practical needs to people, knowledge and support that can help.
+
+CTAs:
+
+Post a Need
+Explore Requests
+
+Add a trust strip below:
+
+Safe Community
+Moderated Activity
+Privacy Focused
+Practical Support
+Clear Community Rules
+
+Make this section visually premium.
+
+==================================================
+COMMUNITY FEED
+==================================================
+
+Improve the existing "People helping people" section.
+
+Fix:
+
+- sidebar
+- category navigation
+- post cards
+- user information
+- metadata
+- badges
+- comments
+- report button
+- spacing
+- alignment
+
+Sidebar categories:
+
+All
+Education
+Work
+Community
+Medical
+Housing
+General
+
+Requirements:
+
+Desktop:
+- elegant sidebar
+- active category state
+- sticky if appropriate
+
+Mobile:
+- horizontally scrollable category chips OR clean collapsible filter
+- no broken layout
+- no horizontal page overflow
+
+Post cards must:
+
+- have consistent padding
+- clear visual hierarchy
+- responsive layout
+- proper avatar placement
+- readable title
+- readable description
+- properly aligned actions
+- hover effect on desktop
+- accessible buttons
+
+==================================================
+HOW MADAD WORKS
+==================================================
+
+Create a premium section:
+
+01 — Share a Need
+02 — Connect Safely
+03 — Make an Impact
+
+Each card should have:
+
+- large number
+- strong title
+- short description
+- subtle hover effect
+
+Desktop:
+3-column layout.
+
+Tablet:
+responsive grid.
+
+Mobile:
+single-column stacked cards.
+
+IMPORTANT:
+No card should overflow the screen.
+
+No heading should get cut off.
+
+No horizontal scrolling.
+
+==================================================
+ADDITIONAL SECTIONS
+==================================================
+
+Create/improve sections for:
+
+1. Share a Need
+Explain how users can post a request.
+
+2. Find a Way to Help
+Allow users to explore requests by category.
+
+3. Connect with Purpose
+Explain comments, offers and meaningful responses.
+
+4. Safety and Moderation
+Explain reporting, moderation and responsible behavior.
+
+5. Community Categories
+Create visually attractive category cards for:
+
+Education
+Work
+Housing
+Medical
+Community
+General
+
+6. Mission
+
+7. Vision
+
+8. Goals and Aims
+
+9. Community Guidelines
+
+10. Privacy and Trust
+
+11. FAQ / Help Center
+
+12. Contact and Support
+
+==================================================
+ALL PAGES
+==================================================
+
+Deeply inspect and improve every existing page.
+
+Ensure these routes work correctly:
+
+/
+ /explore
+ /categories or existing category routes
+ /posts
+ /create
+ /about
+ /mission
+ /vision
+ /goals
+ /how-it-works
+ /safety
+ /guidelines
+ /privacy
+ /terms
+ /faq
+ /contact
+ /signin
+ /signup
+
+IMPORTANT:
+
+Do not create duplicate routes unnecessarily.
+
+Respect the existing routing architecture.
+
+If a route already exists, improve it instead of replacing it blindly.
+
+Every navigation item must link to a real working page.
+
+Test every link.
+
+==================================================
+FORMS
+==================================================
+
+Improve:
+
+- Sign Up
+- Sign In
+- Create Need
+- Contact
+- Comments
+- Reports
+
+Requirements:
+
+- clean labels
+- proper spacing
+- clear validation messages
+- visible focus states
+- loading states
+- disabled states
+- mobile-friendly inputs
+- proper error handling
+
+Do not break existing authentication or API functionality.
+
+==================================================
+AUTHENTICATION
+==================================================
+
+Preserve the existing authentication architecture.
+
+Do not remove:
+
+- sign up
+- sign in
+- sign out
+- user sessions
+- profile functionality
+
+Fix any broken auth flow.
+
+If signup currently fails, deeply investigate the API, validation, database, Prisma configuration and environment usage.
+
+Do not hide errors.
+
+Show useful user-friendly error messages.
+
+==================================================
+POSTS AND COMMUNITY FUNCTIONALITY
+==================================================
+
+Preserve and improve:
+
+- create posts
+- explore posts
+- categories
+- comments
+- help offers
+- reports
+- moderation-related functionality
+
+Do not replace real data with static fake data if existing database/API functionality already exists.
+
+==================================================
+FOOTER
+==================================================
+
+Create a large premium mega footer.
+
+Structure:
+
+MADAD logo and mission statement.
+
+Column 1 — Explore
+Explore Requests
+Categories
+Post a Need
+How It Works
+
+Column 2 — About
+About MADAD
+Mission
+Vision
+Goals
+
+Column 3 — Safety
+Safety & Trust
+Community Guidelines
+Report Content
+Privacy
+
+Column 4 — Support
+FAQ / Help Center
+Contact
+Terms of Service
+
+Contact section:
+
+Location:
+Lahore, Pakistan
+
+Add:
+- clickable map
+- clear address/location information
+- contact number field
+- email field
+
+Use placeholders/configuration if verified real contact details are not available.
+Do NOT invent a fake phone number or business address.
+
+Add bottom footer:
+
+© MADAD
+A global community for practical help.
+
+Add:
+Privacy
+Terms
+Guidelines
+
+All footer links must work.
+
+==================================================
+CONTACT PAGE
+==================================================
+
+Create a professional contact page.
+
+Include:
+
+- Contact heading
+- support information
+- location
+- Lahore, Pakistan
+- map section
+- contact form
+- email/contact information when available from existing configuration
+
+The map should be responsive.
+
+On mobile:
+- no overflow
+- correct height
+- full width
+- touch friendly
+
+==================================================
+RESPONSIVE REQUIREMENTS
+==================================================
+
+This is extremely important.
+
+Test the entire website at:
+
+Mobile:
+320px
+360px
+375px
+390px
+414px
+
+Tablet:
+768px
+820px
+1024px
+
+Desktop:
+1280px
+1440px
+1920px
+
+Fix:
+
+- horizontal overflow
+- text clipping
+- oversized headings
+- broken grids
+- card overflow
+- sidebar issues
+- navbar issues
+- footer issues
+- modal issues
+- form issues
+
+Use responsive typography with clamp() where appropriate.
+
+Ensure:
+
+max-width: 100%
+
+and proper container sizing throughout the application.
+
+Do not use fixed widths that break mobile layouts.
+
+==================================================
+ACCESSIBILITY
+==================================================
+
+Improve:
+
+- button labels
+- keyboard navigation
+- visible focus states
+- color contrast
+- semantic HTML
+- form labels
+- aria labels where necessary
+
+==================================================
+CODE QUALITY
+==================================================
+
+Create reusable components where appropriate.
+
+Suggested reusable components:
+
+Header
+MobileMenu
+Footer
+PageHero
+SectionLabel
+SectionHeading
+CTAButton
+CategoryCard
+NeedCard
+InfoCard
+TrustStrip
+ContactSection
+
+Avoid duplicating the same styles across multiple pages.
+
+Keep the existing project architecture as intact as possible.
+
+==================================================
+CRITICAL RULES
+==================================================
+
+1. DO NOT delete existing functionality.
+
+2. DO NOT replace working APIs with fake frontend data.
+
+3. DO NOT break Prisma/database functionality.
+
+4. DO NOT break authentication.
+
+5. DO NOT remove existing posts, comments, reports or user functionality.
+
+6. Before making changes, inspect the existing code.
+
+7. After making changes, run the application.
+
+8. Fix all build errors.
+
+9. Fix TypeScript errors.
+
+10. Test all major routes.
+
+11. Test desktop and mobile responsiveness.
+
+12. Check all navigation links.
+
+13. Check all CTA buttons.
+
+14. Check modals.
+
+15. Check forms.
+
+16. Check footer links.
+
+17. Check for horizontal overflow.
+
+18. Do not stop after only changing the homepage.
+
+19. Improve the complete website consistently.
+
+20. Keep MADAD branding original.
+
+==================================================
+FINAL QUALITY CHECK
+==================================================
+
+Before finishing:
+
+- Run the build successfully.
+- Fix every compilation error.
+- Test all routes.
+- Test navigation.
+- Test mobile layout.
+- Test desktop layout.
+- Verify signup/signin flow.
+- Verify post creation flow.
+- Verify existing API/database integration.
+- Verify no important functionality was deleted.
+
+Then provide a concise report containing:
+
+1. Files/components changed
+2. Pages improved
+3. Functionality preserved
+4. Bugs fixed
+5. Responsive improvements
+6. Any remaining issue that requires environment variables or external configuration
+
+Make the implementation production-ready.
+Do not give me only recommendations.
+Actually make the changes in the connected repository.

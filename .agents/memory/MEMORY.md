@@ -1,0 +1,1 @@
+- [MADAD architecture](madad-architecture.md) — preserve local cookie-session auth while extending the React/Vite frontend and separate API.

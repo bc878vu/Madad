@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "MADAD Community Platform"
+description = "A premium, safety-first community platform where people share practical needs and connect with people who can help."
+version = "1.0.0"
+id = "artifacts/madad"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 19089
+
+[services.development]
+run = "pnpm --filter @workspace/madad run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/madad", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/madad/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "19089"
+BASE_PATH = "/"
